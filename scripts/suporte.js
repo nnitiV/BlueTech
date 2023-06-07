@@ -25,6 +25,13 @@ if (posição >= 0) {
   loggedOut.style.display = "block";
 }
 
+setTimeout(function () {
+  if (posição < 0) {
+    alert("Logue-se primeiro!");
+    window.location.href = "/home.html";
+  }
+}, 1);
+
 loggedIn.addEventListener("submit", (e) => {
   e.preventDefault();
   localStorage.setItem("posição", -1);

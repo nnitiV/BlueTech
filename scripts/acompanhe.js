@@ -1,7 +1,6 @@
 var caixaBtn1 = document.getElementById("button1");
 var caixaBtn2 = document.getElementById("button2");
 var caixaBtn3 = document.getElementById("button3");
-var caixaBtn4 = document.getElementById("button4");
 var popupCaixa = document.getElementById("caixa");
 var change = document.getElementById("change");
 var numCaixa;
@@ -23,6 +22,13 @@ if (posição >= 0) {
   loggedIn.style.display = "none";
   loggedOut.style.display = "block";
 }
+
+setTimeout(function () {
+  if (posição < 0) {
+    alert("Logue-se primeiro!");
+    window.location.href = "/home.html";
+  }
+}, 1);
 
 loggedIn.addEventListener("submit", (e) => {
   e.preventDefault();

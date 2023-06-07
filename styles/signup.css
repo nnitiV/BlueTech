@@ -1,0 +1,95 @@
+:root {
+    --select-border: #777;
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+    --blue1: #86CBF2;
+    --blue2: #136ea3;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: #f0f2f3;
+}
+
+main {
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    margin: 3.5rem auto;
+}
+
+main h1 {
+    font-size: 3.5rem;
+    transition: .2s;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    margin-left: -2rem;
+}
+
+.blue {
+    color: #218ecd;
+}
+
+form{
+    width: 90%;
+    height: 30rem;
+    padding: 4rem;
+    margin: 0 auto;
+    background-color: rgba(213, 239, 255, 0.345);
+}
+
+form .sections {
+    display: flex;
+    justify-content: space-between;
+}
+
+form .sections input, form .sections datalist {
+    width: 90%;
+}
+
+form .col-md-6{
+    text-align: left;
+}
+
+form .col-md-6 label{
+    margin: 1rem 0 -4px 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+form .sections #exampleDataList{
+    margin: 1rem 0 -4px 0;
+}
+
+form button{
+    width: 12rem;
+    height: 4rem;
+    margin: 2rem 4rem 0 0;
+}
+
+form button p{
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#signup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 1.5rem;
+}
+
+#signup p {
+    color: rgb(149, 146, 146);
+    margin-top: 1rem;
+}
+
+#signup button {
+    font-weight: bold;
+}

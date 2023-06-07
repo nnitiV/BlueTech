@@ -1,0 +1,60 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlueTech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/styles/login.css">
+     <script
+      src="https://kit.fontawesome.com/cd140dbc84.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scripts/login.js" defer></script>
+  </head>
+</head>
+<body>
+    <main>
+        <h1 style="user-select:none;"><span class="blue">Blue</span>Tech</h1>
+        <form  id="loginForm">
+        <div class="col-md-6">
+          <label for="inputEmail" class="form-label"><p style="user-select:none; margin-bottom: 0px;">Email</p></label>
+          <input type="email" class="form-control" id="inputEmail" name="inputEmail" />
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword" class="form-label" ><p style="user-select:none;margin-bottom: 0px;">Senha</p></label>
+          <input type="password" class="form-control" id="inputPassword" name="inputPassword"  />
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck" />
+            <label class="form-check-label"style="font-weight: bold;" for="gridCheck">
+              <p style="user-select:none;margin-left: -32px;">Lembrar</p> 
+            </label>
+          </div>
+        </div>
+         <div class="col-12">
+          <button type="submit" class="btn btn-primary">Logar</button>
+        </div>
+        <p style="user-select:none;"><a href="#">Esqueceu sua senha?</a></p>
+        </form>
+    </main>
+</body>
+</html>

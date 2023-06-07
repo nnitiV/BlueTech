@@ -1,0 +1,60 @@
+:root {
+    --select-border: #777;
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+            --blue1: #86CBF2;
+            --blue2: #136ea3;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+header{
+    height: 12vh;
+}
+
+body{
+    overflow: none !important;
+    background-color: rgba(216, 230, 242, 0.23) !important;
+    overflow-x: hidden;
+}
+main{
+    
+    width: fit-content;
+    margin: 40px auto;
+}
+
+main h1{
+    text-align: center;
+    margin: 0 auto 4vh;
+    width: 72vw;
+    font-size: 2.25rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #2d2d2d;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-shadow: 1px 1px #000000;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#suportForm{
+    background: rgba(216, 230, 242, 0.401);
+    width: 100vw;
+    margin: 0 !important;
+    padding: 2vh 4vh 6vh;   
+    text-shadow: .5px .5px #000000;
+    margin-bottom: 0 !important;
+} 
+
+footer{
+    margin-top: -6vh !important;
+    padding-bottom: 2vh ;
+}

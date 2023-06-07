@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+:root{
+    --blue1: #86CBF2;
+    --blue2: #136ea3;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #FFFFFF;
+}
+
+header{
+    background-color: var(--blue2);
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    height: 8vh !important;
+    padding: 1.5vh 15vh 0!important ;
+}
+
+header h1 {
+    color: white;
+    font-size: 2rem;
+    transition: .2s;
+    font-weight: 700;
+}
+
+header h1:hover {
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+
+header nav ol{
+    height: fit-content !important;
+    margin-bottom: 1vh !important;
+    margin-right: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ol li{
+    color: white;
+    font-variant: small-caps;
+    font-weight: 700;
+    margin-right:10vh;
+    font-size: 1.35rem;
+}
+
+header nav ol li a{
+    transition: .1s;
+    padding: 1vh  1rem !important;
+    text-decoration: none;
+    color: white;
+}
+
+.active,header nav ol li a:hover{
+    border-radius: 1rem;
+    background-color: #1B98E0;
+    border: 1px solid #1B98E0;
+}
+
+header #button {
+    width: 6rem !important;
+    height: 2.5rem !important;
+    border-radius: .75rem !important;
+    margin-bottom: .8rem !important;
+    background-color: #1B98E0 !important;
+    color: white !important;
+    box-shadow: .1px .1px 0px .1px black !important;
+    border: none !important;
+}
+
+.blue{
+    color: #0c689d;
+}
+
+.blueLogo {
+    color: var(--blue1);
+}
+main .about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 130vh;
+    margin: 15vh auto;
+}
+
+main .about img{
+    image-rendering: optimizeQuality;
+    height: 50vh;
+}
+
+main .about .text{
+    display: block;
+    width: 30rem;
+}
+
+main .about .text h2{
+    font-size: 2.25rem;
+    letter-spacing: .1rem;
+}
+
+main .about .text p{
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 8.5vh 0;
+}
+
+main .about .text button{
+    display: flex;
+    font-size: 1.35rem;
+    margin: 4vh auto;
+    padding: 1vh 2vh;
+    border: 0;
+    border-radius: .5rem;
+    background-color: var(--blue2);
+    color: white;
+    transition: .35s;
+}
+
+main .about .text button:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+#acompanhe{
+    display: block;
+    align-items: center;
+    text-align: center;
+    padding: 8vh;
+    background-color: var(--blue2);
+    color: white;
+}
+
+#acompanhe div {
+    margin: 0 auto;
+    width: 50rem;
+}
+
+#acompanhe div h2{
+    font-size: 2.25rem;
+}
+
+#acompanhe div p{
+    text-align: justify;
+    margin: 4vh 0;
+}
+
+#acompanhe div .text{
+    width: 30rem;
+}
+
+#acompanhe div button{
+    display: flex;
+    font-size: 1.35rem;
+    margin: 0 auto;
+    padding: 1vh 2vh;
+    border: 0;
+    border-radius: .5rem;
+    background-color: white;
+    color: #1B98E0;
+    transition: .35s;
+}
+
+#acompanhe div button:hover{
+    cursor: pointer;
+    transform: scale(1.25);
+}
+
+#suporte{
+    display: block;
+    text-align: center;
+    width: fit-content;
+    padding: 8vh;
+    margin: 0 auto;
+}
+
+#suporte h2{
+    font-size: 2.75rem;
+}
+
+#suporte p{
+    font-size: 1.25rem;
+    margin: 6vh 0;
+}
+
+#suporte button {
+    display: flex;
+    font-size: 1.5rem;
+    padding: 2vh 3vh;
+    margin: 0 auto;
+    border: 0;
+    border-radius: .5rem;
+    background-color: #1B98E0;
+    color: white;
+    transition: .35s;
+}
+
+#suporte button:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+}
+
+#suporte button a {
+    text-decoration: none;
+    color: white;
+}
+
+footer{
+    padding: 2rem 4rem .75rem;
+    height: fit-content;
+    background-color: var(--blue2);
+}
+
+footer p{
+    font-size: 1.05rem;
+    color: white;
+    margin-bottom: .5rem;
+}
+
+footer p i {
+    color: #1B98E0;
+    font-size: 1.25rem;
+    font-weight: bolder;
+    margin-right: 1rem;
+}

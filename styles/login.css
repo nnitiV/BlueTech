@@ -1,0 +1,94 @@
+:root {
+    --select-border: #777;
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+    --blue1: #86CBF2;
+    --blue2: #136ea3;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body{
+    background:#f0f2f3;
+}
+
+main{
+    width: 24rem;
+    padding: 1rem 0;
+    text-align: center;
+    margin: 6rem auto;
+}
+
+main h1{
+    font-size: 3.5rem;
+    transition: .2s;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.blue {
+    color: #218ecd;
+}
+
+form div {
+    margin: 0 auto;
+    padding: .45rem 1.2rem;
+}
+
+form div #inputEmail{
+    margin-left: -7rem;
+    width: 24rem;
+}
+
+form div #inputPassword {
+    margin-left: -7rem;
+    font-weight: bold;
+    width: 24rem;
+}
+
+form div #exampleDataList{
+    margin-left: -1rem;
+        font-weight: bold;
+        width: 24rem;
+}
+
+form div .form-label{
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-left: -20rem;
+}
+
+form .form-check .form-check-input{
+    margin-left: -2.2rem;
+}
+
+form .form-check label{
+    margin-left: -14rem;
+}
+
+form .col-12 .btn{
+    height: 2.75rem;
+    width: 10rem;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+#signup{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 1.5rem;
+}
+
+ #signup p{
+    color: rgb(149, 146, 146);
+    margin-top: 1rem;
+}
+
+ #signup button{
+    font-weight: bold;
+}

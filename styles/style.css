@@ -233,3 +233,62 @@ footer p i {
     font-weight: bolder;
     margin-right: 1rem;
 }
+
+#overflow{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.21);
+    position: fixed;
+    left: -100%;
+    top: -100%;
+    z-index: -1;
+    padding: 90rem;
+    transition: .3s;
+    height: 100%;
+    width: 100%;
+}
+
+#loginPopup{
+    display: flexbox;
+    position: fixed;
+    width: 35rem;
+    height: 25rem;
+    padding: 7.75rem 5rem;
+    top: 22%;
+    left: 30%;
+    transition: .3s;
+    border: 1px solid rgba(0, 0, 0, 0.329);
+    transform: scale(0);
+    justify-content: block;
+    text-align: center;
+    align-items: center;
+    background-color: #0d8bd4;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+
+#loginPopup p{
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+#loginPopup .hover-button{
+    width: 7.25rem;
+    height: 2.5rem;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+    background: rgb(255, 255, 255);
+    color: #00aaff;
+    border: none;
+    border-radius: .5rem;
+} 
+
+#loginPopup .hover-button:hover {
+    transition: .3s;
+    background-color: #00aaff;
+    font-weight: bold;
+    color: white;
+}
+
+

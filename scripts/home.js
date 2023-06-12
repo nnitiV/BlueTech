@@ -1,15 +1,19 @@
 const emailsStoraged = localStorage.getItem("escolaEmail");
 const emails = JSON.parse(emailsStoraged);
-const posição = localStorage.getItem("posição");
+const logado = localStorage.getItem("posição");
 const test = document.getElementById("test");
 const loggedIn = document.getElementById("logged");
 const loggedOut = document.getElementById("notLogged");
 const btnLogin = document.querySelector("input[name=login]");
 const btnLogout = document.querySelector("input[name=logout]");
 const btnTicket = document.getElementById("abrirTicket");
-const btnAcompanhe = document.getElementById("acompanhe");
+const btnAcompanhe = document.getElementById("acompanheBtn");
+const popup = document.getElementById("overflow");
+const logarBtn = document.getElementById("logar");
+const cancelarBtn = document.getElementById("cancelar");
+const loginPopup = document.getElementById("loginPopup");
 
-if (posição >= 0) {
+if (logado >= 0) {
   loggedIn.style.display = "block";
   loggedOut.style.display = "none";
 } else {
@@ -29,8 +33,9 @@ loggedOut.addEventListener("submit", (e) => {
 });
 
 btnAcompanhe.addEventListener("click", (e) => {
-  if (posição < 0) {
-    alert("Logue-se primeiro!");
+  if (logado < 0) {
+    loginPopup.style.transform = "scale(1)";
+
     return;
   } else {
     window.location.href = "/acompanhe.html";
@@ -38,10 +43,18 @@ btnAcompanhe.addEventListener("click", (e) => {
 });
 
 btnTicket.addEventListener("click", (e) => {
-  if (posição < 0) {
-    alert("Logue-se primeiro!");
+  if (logado < 0) {
+    loginPopup.style.transform = "scale(1)";
     return;
   } else {
-    window.location.href = "/ticket.html";
+    window.location.href = "/suporte.html";
   }
+});
+
+cancelarBtn.addEventListener("click", () => {
+  loginPopup.style.transform = "scale(0)";
+});
+
+logarBtn.addEventListener("click", () => {
+  window.location.href = "/index.html";
 });

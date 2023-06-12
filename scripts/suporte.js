@@ -27,8 +27,7 @@ if (posição >= 0) {
 
 setTimeout(function () {
   if (posição < 0) {
-    alert("Logue-se primeiro!");
-    window.location.href = "/home.html";
+    window.location.href = "/notlogged.html";
   }
 }, 1);
 

@@ -38,8 +38,9 @@
       src="https://cdn.plot.ly/plotly-2.20.0.min.js"
       charset="utf-8"
     ></script>
-    <script src="/scripts/acompanhe.js" defer></script>
+    <script src="/scripts/carroussel.js" defer></script>
     <script src="/scripts/graphic.js" defer></script>
+    <script src="/scripts/acompanhe.js" defer></script>
   </head>
   <body id="html">
     <header>
@@ -67,7 +68,7 @@
             <h2>Acompanhamento Hídrico</h2>
           </div>
           <div class="wrap">
-            <div class="waterTank">
+            <!-- <div class="waterTank">
               <h2>Caixa D'Água 1</h2>
               <button id="button1" onclick="getNumBox(this)" data-caixa="1">
                 Ver caixa
@@ -90,6 +91,13 @@
               <button id="button4" onclick="getNumBox(this)" data-caixa="4">
                 Ver caixa
               </button>
+            </div> -->
+            <div class="carousel">
+              <div class="slides">
+                <!-- Slide items will be dynamically generated here -->
+              </div>
+              <button class="prev-button">Previous</button>
+              <button class="next-button">Next</button>
             </div>
           </div>
         </fieldset>
@@ -127,7 +135,7 @@
     </div>
     <div></div>
   </footer>
-  <div id="caixa">
+  <!-- <div id="caixa">
     <div id="content">
       <div id="close">
         <i class="fa-solid fa-xmark"></i>
@@ -135,5 +143,5 @@
       <h1>Caixa Da Água <span id="change">1</span></h1>
       <div id="myGrap"></div>
     </div>
-  </div>
+  </div> -->
 </html>

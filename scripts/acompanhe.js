@@ -2,9 +2,9 @@ var caixaBtn1 = document.getElementById("button1");
 var caixaBtn2 = document.getElementById("button2");
 var caixaBtn3 = document.getElementById("button3");
 var caixaBtn4 = document.getElementById("button4");
-var popupCaixa = document.getElementById("caixa");
+// var popupCaixa = document.getElementById("caixa");
 var caixaElements = document.querySelectorAll("[data-caixa]");
-var close = document.getElementById("close");
+// var close = document.getElementById("close");
 const emailsStoraged = localStorage.getItem("escolaEmail");
 const emails = JSON.parse(emailsStoraged);
 const posição = localStorage.getItem("posição");
@@ -19,6 +19,17 @@ var numCaixa;
 var titulo;
 var data;
 
+function getNumBox() {
+  var caixas = document.querySelectorAll(".myGrap");
+  var change = document.getElementsByClassName("change");
+  var change1 = document.getElementsByClassName("change1");
+  for(var i = 0; i < caixas.length; i++){
+    numCaixa = caixas[i].getAttribute('data-caixa');
+    var element = change[i];
+    element.textContent = numCaixa;
+  }
+}
+getNumBox();
 var caixaValues = [];
 for (var i = 0; i < caixaElements.length; i++) {
   var value = caixaElements[i].getAttribute("data-caixa");
@@ -50,14 +61,6 @@ loggedOut.addEventListener("submit", (e) => {
   window.location.href = "/index.html";
 });
 
-function getNumBox(item) {
-  numCaixa = item.getAttribute("data-caixa");
-  for (const caixa of caixaValues) {
-    if (numCaixa == caixa) {
-    }
-  }
-  change.innerHTML = numCaixa;
-}
 caixaBtn1.addEventListener("click", () => {
   popupCaixa.style.display = "block";
 });
@@ -67,9 +70,9 @@ caixaBtn2.addEventListener("click", () => {
 caixaBtn3.addEventListener("click", () => {
   popupCaixa.style.display = "block";
 });
-caixaBtn4.addEventListener("click", () => {
-  popupCaixa.style.display = "block";
-});
+// caixaBtn4.addEventListener("click", () => {
+//   popupCaixa.style.display = "block";
+// });
 
 var layout = {
   yaxis: {
@@ -91,12 +94,10 @@ var layout = {
 };
 var config = { responsive: true };
 
-Plotly.newPlot("myGrap", data, layout);
-
-close.addEventListener("click", () => {
-  console.log("Popup undisplayed");
-  popupCaixa.style.display = "none";
-});
+// close.addEventListener("click", () => {
+//   console.log("Popup undisplayed");
+//   popupCaixa.style.display = "none";
+// });
 
 var yArray = [1, 2, 3, 4, 5]; // Initial array
 
@@ -118,11 +119,15 @@ var layout = {
   // Add any other layout options as needed
 };
 
-Plotly.newPlot("myGraph", data, layout);
+Plotly.newPlot("myGrap1", data, layout);
+Plotly.newPlot("myGrap2", data, layout);
+Plotly.newPlot("myGrap3", data, layout);
 
 setInterval(function () {
   updateArray();
-  Plotly.update("myGraph", { y: [yArray] });
+  Plotly.update("myGrap1", { y: [yArray] });
+  Plotly.update("myGrap2", { y: [yArray] });
+  Plotly.update("myGrap3", { y: [yArray] });
 }, 5000);
 
 function updateArray() {
@@ -131,11 +136,10 @@ function updateArray() {
   yArray.push(newValue); // Add the new value at the end
   console.log(yArray);
 }
-updateChart();
 
 // setInterval(function () {
 //   updateArray();
-//   Plotly.update("myGraph", { y: [yArray] });
+//   Plotly.update("myGrap", { y: [yArray] });
 //   Plotly.react("myGrap", data);
 // }, 5000);
 

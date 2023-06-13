@@ -1,33 +1,33 @@
-var yArray = [1, 2, 3, 4, 5]; // Initial array
-
-var data = [
-  {
-    type: "indicator",
-    mode: "number+delta",
-    value: 110,
-    delta: { reference: 100, valueformat: ".0f" },
-    domain: { y: [0, 1], x: [0.25, 0.75] },
-  },
-  {
-    y: yArray,
-  },
+var slideData = [
+  { image: 'slide1.jpg', caption: 'Slide 1' },
+  { image: 'slide2.jpg', caption: 'Slide 2' },
+  { image: 'slide3.jpg', caption: 'Slide 3' },
 ];
 
-var layout = {
-  title: "Chart Title",
-  // Add any other layout options as needed
-};
+function createSlide(slide) {
+  var slideElement = document.createElement('div');
+  slideElement.classList.add('slide');
 
-Plotly.newPlot("myGraph", data, layout);
+  var imageElement = document.createElement('img');
+  imageElement.src = slide.image;
+  slideElement.appendChild(imageElement);
 
-setInterval(function () {
-  updateArray();
-  Plotly.update("myGraph", { y: [yArray] });
-}, 500);
+  var captionElement = document.createElement('div');
+  captionElement.textContent = slide.caption;
+  slideElement.appendChild(captionElement);
 
-function updateArray() {
-  yArray.shift(); // Remove the first element
-  var newValue = Math.floor(Math.random() * 100); // Generate a new random value
-  yArray.push(newValue); // Add the new value at the end
-  console.log(yArray);
+  return slideElement;
 }
+
+function populateCarousel() {
+  var slidesContainer = document.querySelector('.slides');
+  slidesContainer.innerHTML = '';
+
+  for (var i = 0; i < slideData.length; i++) {
+    var slide = slideData[i];
+    var slideElement = createSlide(slide);
+    slidesContainer.appendChild(slideElement);
+  }
+}
+
+populateCarousel();

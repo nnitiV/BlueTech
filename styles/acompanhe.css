@@ -159,7 +159,13 @@ button:hover {
     margin-top: 2.5rem;
 }
 
-#myGrap{
+.myGrap{
     z-index: 1;
     width: fit-content;
 }
+
+.carousel{
+    width: 40rem;
+    margin-left: 36rem;
+}
+

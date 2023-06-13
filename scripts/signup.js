@@ -2,12 +2,15 @@ const formElement = document.getElementById("formSignUp");
 const inputElement = document.getElementById("exampleDataList");
 var emailAlreadyExists = false;
 var optionSelected;
-// localStorage.setItem("email", JSON.stringify([]));
-// localStorage.setItem("password", JSON.stringify([]));
-// localStorage.setItem("crecheEscola", JSON.stringify([]));
-// localStorage.setItem("telefone", JSON.stringify([]));
-// localStorage.setItem("name", JSON.stringify([]));
-
+localStorage.setItem("Escolas", JSON.stringify(["Arco-Íris", "Diversão"]));
+var email = localStorage.getItem("email");
+var emails = JSON.parse(email);
+if(emails.length <= 0){
+localStorage.setItem("email", JSON.stringify([]));
+localStorage.setItem("password", JSON.stringify([]));
+localStorage.setItem("telefone", JSON.stringify([]));
+localStorage.setItem("name", JSON.stringify([]));
+}
 const storagedSchools = localStorage.getItem("Escolas");
 const escolas = JSON.parse(storagedSchools);
 var dropdown = document.getElementById("datalistOptions");

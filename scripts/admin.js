@@ -5,11 +5,12 @@ var optionSelected;
 localStorage.setItem("Escolas", JSON.stringify(["Arco-Íris", "Diversão"]));
 var email = localStorage.getItem("email");
 var emails = JSON.parse(email);
-if(emails.length <= 0){
-localStorage.setItem("email", JSON.stringify([]));
-localStorage.setItem("password", JSON.stringify([]));
-localStorage.setItem("telefone", JSON.stringify([]));
-localStorage.setItem("name", JSON.stringify([]));
+var hi = null;
+if (emails == null || emails.length <= 0) {
+  localStorage.setItem("email", JSON.stringify([]));
+  localStorage.setItem("password", JSON.stringify([]));
+  localStorage.setItem("telefone", JSON.stringify([]));
+  localStorage.setItem("name", JSON.stringify([]));
 }
 const storagedSchools = localStorage.getItem("Escolas");
 const escolas = JSON.parse(storagedSchools);
@@ -118,3 +119,18 @@ function checkIfEmailExists(value) {
   }
   return emailAlreadyExists;
 }
+
+setTimeout(function () {
+  var isAdmin = localStorage.getItem("isAdmin");
+  if (isAdmin == 0) {
+    window.location.href = "/adminLogin.html";
+  }
+}, 1);
+
+const sair = document.getElementById("sair");
+sair.addEventListener("submit", function (e) {
+  e.preventDefault();
+  localStorage.setItem("isAdmin", 0);
+  localStorage.setItem("posição", -1);
+  window.location.href = "/home.html";
+});

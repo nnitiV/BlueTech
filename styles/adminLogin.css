@@ -1,0 +1,29 @@
+#loginForm{
+    display: block;
+        position: fixed;
+        width: 45rem;
+        height: 25rem;
+        padding: 2.5rem;
+        top: 20%;
+        left: 26%;
+        transition: .3s;
+        border: 1px solid rgba(0, 0, 0, 0.329);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #0d8bd4;
+        border-radius: 1rem;
+        text-transform: uppercase;
+        color: whitesmoke;
+}
+
+label{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+button{
+    font-weight: bold;
+}

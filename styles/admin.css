@@ -93,3 +93,10 @@ form button p{
 #signup button {
     font-weight: bold;
 }
+
+#sair{
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    margin-top: -3rem;
+}

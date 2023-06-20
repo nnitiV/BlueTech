@@ -1,7 +1,3 @@
-var caixaBtn1 = document.getElementById("button1");
-var caixaBtn2 = document.getElementById("button2");
-var caixaBtn3 = document.getElementById("button3");
-var caixaBtn4 = document.getElementById("button4");
 // var popupCaixa = document.getElementById("caixa");
 var caixaElements = document.querySelectorAll("[data-caixa]");
 // var close = document.getElementById("close");
@@ -19,17 +15,16 @@ var numCaixa;
 var titulo;
 var data;
 
-function getNumBox() {
+function changeTitle() {
   var caixas = document.querySelectorAll(".myGrap");
   var change = document.getElementsByClassName("change");
-  var change1 = document.getElementsByClassName("change1");
-  for(var i = 0; i < caixas.length; i++){
-    numCaixa = caixas[i].getAttribute('data-caixa');
+  for (var i = 0; i < caixas.length; i++) {
+    numCaixa = caixas[i].getAttribute("data-caixa");
     var element = change[i];
     element.textContent = numCaixa;
   }
 }
-getNumBox();
+changeTitle();
 var caixaValues = [];
 for (var i = 0; i < caixaElements.length; i++) {
   var value = caixaElements[i].getAttribute("data-caixa");
@@ -61,30 +56,20 @@ loggedOut.addEventListener("submit", (e) => {
   window.location.href = "/index.html";
 });
 
-caixaBtn1.addEventListener("click", () => {
-  popupCaixa.style.display = "block";
-});
-caixaBtn2.addEventListener("click", () => {
-  popupCaixa.style.display = "block";
-});
-caixaBtn3.addEventListener("click", () => {
-  popupCaixa.style.display = "block";
-});
-// caixaBtn4.addEventListener("click", () => {
-//   popupCaixa.style.display = "block";
-// });
-
 var layout = {
   yaxis: {
-    title: "Porcentagem da Caixa",
+    // title: "Porcentagem da Caixa",
     ticktext: ["20%", "40%", "60%", "80%", "100%"],
-    tickvals: [1, 2, 3, 4, 5],
+    tickvals: [20, 40, 60, 80, 100],
     tickmode: "array",
     automargin: true,
+    range: [0, 100],
     titlefont: { size: 30 },
   },
   xaxis: {
-    title: "Meses",
+    // title: "Meses",
+    tickvals: [1, 2, 3, 4, 5], // Defina aqui os valores dos pontos no eixo x
+    ticktext: ["", "", "", "", ""], // Defina aqui os rótulos desejados para o eixo x
   },
   width: 850,
   height: 500,
@@ -92,55 +77,90 @@ var layout = {
   plot_bgcolor: "rgba(0,0,0,0)",
   font: { size: 18 },
 };
-var config = { responsive: true };
 
 // close.addEventListener("click", () => {
 //   console.log("Popup undisplayed");
 //   popupCaixa.style.display = "none";
 // });
 
-var yArray = [1, 2, 3, 4, 5]; // Initial array
-
+var yArray = []; // Initial array
+for (var i = 0; i < 10; i++) {
+  var newValue = Math.floor(90 + Math.random() * 10);
+  yArray.push(newValue);
+}
 var data = [
   {
-    type: "indicator",
-    mode: "number+delta",
-    value: 110,
-    delta: { reference: 100, valueformat: ".0f" },
-    domain: { y: [0, 1], x: [0.25, 0.75] },
+    type: "scatter",
+    // mode: "number+delta",
+    // value: 0,
+    // delta: { reference: 50, valueformat: ".0f" },
+    // domain: { y: [0, 1], x: [0.25, 0.75] },
+    // title: { text: "Users online" },
   },
   {
     y: yArray,
   },
 ];
 
-var layout = {
-  title: "Chart Title",
-  // Add any other layout options as needed
-};
+var yArray2 = []; // Initial array
+for (var i = 0; i < 10; i++) {
+  var newValue = Math.floor(70 + Math.random() * 10);
+  yArray2.push(newValue);
+}
+var data2 = [
+  {
+    type: "indicator",
+    mode: "number+delta",
+    // value: 0,
+    // delta: { reference: 50, valueformat: ".0f" },
+    domain: { y: [0, 1], x: [0.25, 0.75] },
+    // title: { text: "Users online" },
+  },
+  {
+    y: yArray2,
+  },
+];
+
+var yArray3 = []; // Initial array
+for (var i = 0; i < 10; i++) {
+  var newValue = Math.floor(50 + Math.random() * 10);
+  yArray3.push(newValue);
+}
+var data3 = [
+  {
+    type: "indicator",
+    mode: "number+delta",
+    // value: 0,
+    // delta: { reference: 50, valueformat: ".0f" },
+    domain: { y: [0, 1], x: [0.25, 0.75] },
+    // title: { text: "Users online" },
+  },
+  {
+    y: yArray3,
+  },
+];
 
 Plotly.newPlot("myGrap1", data, layout);
-Plotly.newPlot("myGrap2", data, layout);
-Plotly.newPlot("myGrap3", data, layout);
-
+Plotly.newPlot("myGrap2", data2, layout);
+Plotly.newPlot("myGrap3", data3, layout);
+Plotly.deleteTraces("myGrap1", 0);
+Plotly.deleteTraces("myGrap2", 0);
+Plotly.deleteTraces("myGrap3", 0);
 setInterval(function () {
   updateArray();
   Plotly.update("myGrap1", { y: [yArray] });
-  Plotly.update("myGrap2", { y: [yArray] });
-  Plotly.update("myGrap3", { y: [yArray] });
-}, 5000);
+  Plotly.update("myGrap2", { y: [yArray2] });
+  Plotly.update("myGrap3", { y: [yArray3] });
+}, 500);
 
 function updateArray() {
   yArray.shift(); // Remove the first element
-  var newValue = Math.floor(Math.random() * 100); // Generate a new random value
+  var newValue = Math.floor(90 + Math.random() * 10); // Generate a new random value
   yArray.push(newValue); // Add the new value at the end
-  console.log(yArray);
+  yArray2.shift(); // Remove the first element
+  var newValue = Math.floor(70 + Math.random() * 10); // Generate a new random value
+  yArray2.push(newValue); // Add the new value at the end
+  yArray3.shift(); // Remove the first element
+  var newValue = Math.floor(50 + Math.random() * 10); // Generate a new random value
+  yArray3.push(newValue); // Add the new value at the end
 }
-
-// setInterval(function () {
-//   updateArray();
-//   Plotly.update("myGrap", { y: [yArray] });
-//   Plotly.react("myGrap", data);
-// }, 5000);
-
-// var smallest = Math.min(...data[1].y);

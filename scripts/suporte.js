@@ -16,6 +16,10 @@ const loggedIn = document.getElementById("logged");
 const loggedOut = document.getElementById("notLogged");
 const btnLogin = document.querySelector("input[name=login]");
 const btnLogout = document.querySelector("input[name=logout]");
+const suportForm = document.getElementById("suportForm");
+suportForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
 
 if (posição >= 0) {
   loggedIn.style.display = "block";

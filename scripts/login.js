@@ -1,4 +1,16 @@
 const formElement = document.getElementById("loginForm");
+localStorage.setItem("isAdmin", 0);
+localStorage.setItem("email", JSON.stringify([]));
+localStorage.setItem("password", JSON.stringify([]));
+var stoEmails = localStorage.getItem("email");
+var stoSenhas = localStorage.getItem("password");
+var emails = JSON.parse(stoEmails);
+var senhas = JSON.parse(stoSenhas);
+emails.push("test@test.com");
+const hashedPassword = CryptoJS.SHA256("teste").toString();
+localStorage.setItem("email", JSON.stringify(emails));
+senhas.push(hashedPassword);
+localStorage.setItem("password", JSON.stringify(senhas));
 formElement.addEventListener("submit", (e) => {
   e.preventDefault();
 

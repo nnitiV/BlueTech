@@ -19,6 +19,7 @@
     />
     <link rel="stylesheet" href="/styles/style.css" />
     <link rel="stylesheet" href="/styles/acompanhe.css" />
+    <link rel="stylesheet" href="/styles/carouseStyle.css" />
     <script
       src="https://kit.fontawesome.com/cd140dbc84.js"
       crossorigin="anonymous"
@@ -41,6 +42,7 @@
     <script src="/scripts/carroussel.js" defer></script>
     <script src="/scripts/graphic.js" defer></script>
     <script src="/scripts/acompanhe.js" defer></script>
+    <script src="/scripts/carouselData.js" defer></script>
   </head>
   <body id="html">
     <header>
@@ -67,37 +69,15 @@
           <div class="title">
             <h2>Acompanhamento Hídrico</h2>
           </div>
-          <div class="wrap">
-            <!-- <div class="waterTank">
-              <h2>Caixa D'Água 1</h2>
-              <button id="button1" onclick="getNumBox(this)" data-caixa="1">
-                Ver caixa
-              </button>
-            </div>
-            <div class="waterTank">
-              <h2>Caixa D'Água 2</h2>
-              <button id="button2" onclick="getNumBox(this)" data-caixa="2">
-                Ver caixa
-              </button>
-            </div>
-            <div class="waterTank">
-              <h2>Caixa D'Água 3</h2>
-              <button id="button3" onclick="getNumBox(this)" data-caixa="3">
-                Ver caixa
-              </button>
-            </div>
-            <div class="waterTank">
-              <h2>Caixa D'Água 4</h2>
-              <button id="button4" onclick="getNumBox(this)" data-caixa="4">
-                Ver caixa
-              </button>
-            </div> -->
+          <div class="wrap1">
             <div class="carousel">
               <div class="slides">
                 <!-- Slide items will be dynamically generated here -->
               </div>
-              <button class="prev-button">Previous</button>
-              <button class="next-button">Next</button>
+              <div id="buttons">
+                <button class="prev-button">Anterior</button>
+                <button class="next-button">Próximo</button>
+              </div>
             </div>
           </div>
         </fieldset>
@@ -107,21 +87,66 @@
           <h2>Dados coletados</h2>
         </div>
         <div class="wrap">
-          <div class="para">
-            <h3>Horário frequente de falta d'água</h3>
-            <p style="font-size: 20px">18:00</p>
+          <div id="carousels">
+            <!-- <div id="placeHolder"></div> -->
+            <div class="carouselData activeCar">
+              <div id="caixaTitle">
+                <h2>Caixa D'Água <span id="change">1</span></h2>
+              </div>
+              <div id="contentCaixa">
+                <div class="para">
+                  <h3>Horário frequente de falta d'água</h3>
+                  <p style="font-size: 20px">18:00</p>
+                </div>
+                <div class="para">
+                  <h3>Mês com maior falta de água</h3>
+                  <p style="font-size: 20px">Maio</p>
+                </div>
+                <div class="para">
+                  <h3>Semana com maior falta de água</h3>
+                  <p style="font-size: 20px">1ª semana</p>
+                </div>
+                <div class="para">
+                  <h3>Maior tempo sem água</h3>
+                  <p style="font-size: 20px">3 horas e 45 minutos</p>
+                </div>
+              </div>
+            </div>
+            <div class="carouselData inactiveCar">
+              <div id="caixaTitle">
+                <h2>Caixa D'Água <span id="change">2</span></h2>
+              </div>
+              <div id="contentCaixa">
+                <div class="para">
+                  <h3>Horário frequente de falta d'água</h3>
+                  <p style="font-size: 20px">18:00</p>
+                </div>
+                <div class="para">
+                  <h3>Mês com maior falta de água</h3>
+                  <p style="font-size: 20px">Maio</p>
+                </div>
+                <div class="para">
+                  <h3>Semana com maior falta de água</h3>
+                  <p style="font-size: 20px">1ª semana</p>
+                </div>
+                <div class="para">
+                  <h3>Maior tempo sem água</h3>
+                  <p style="font-size: 20px">3 horas e 45 minutos</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="para">
-            <h3>Mês com maior falta de água</h3>
-            <p style="font-size: 20px">Maio</p>
-          </div>
-          <div class="para">
-            <h3>Semana com maior falta de água</h3>
-            <p style="font-size: 20px">1ª semana</p>
-          </div>
-          <div class="para">
-            <h3>Maior tempo sem água</h3>
-            <p style="font-size: 20px">3 horas e 45 minutos</p>
+          <div
+            id="carouselControls"
+            style="
+              display: flex;
+              justify-content: space-between;
+              width: 20rem;
+              margin: 0 auto;
+            "
+          >
+            <button id="anterior">Anterior</button>
+            <button id="próximo">Próximo</button>
           </div>
         </div>
       </div>

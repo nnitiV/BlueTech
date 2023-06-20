@@ -41,13 +41,6 @@ h2, h3{
     font-family: 'Urbanist', sans-serif;
 }
 
-.wrap{
-    display: grid;
-    background-color: white;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--blue2);
-    padding: 4rem 0  !important;
-}
 
 legend{
     float: unset !important;
@@ -80,7 +73,7 @@ button:hover {
 }
 
 .data{
-    width: 100%;
+    width: 99vw;
     background-color: #f4f5f6 !important;
     padding: 6vh 2vw 12vh !important;
 }
@@ -164,8 +157,78 @@ button:hover {
     width: fit-content;
 }
 
-.carousel{
-    width: 40rem;
-    margin-left: 36rem;
+.wrap {
+    display: block;
+    width: 95vw;
+    background-color: white;
+    border: 1px solid var(--blue2);
+    padding: 4rem 0 !important;
 }
 
+.wrap #caixaTitle{
+    margin: -1rem 0 4rem 0;
+}
+
+.wrap #caixaTitle h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.wrap #contentCaixa{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 14rem;
+}
+
+.wrap #contentCaixa h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.wrap1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--blue2);
+    padding: 4rem 0 !important;
+}
+
+.carousel{
+    display: block;
+    margin: 10px;
+    text-align: center;
+}
+
+.carousel #carouselTitle{
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 2rem;
+}
+
+.carousel #carouselTitle .text{
+    margin-right: .5rem;
+}
+
+.carousel #buttons{
+    width: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+
+.carousel #buttons button{
+    width: 10rem;
+}
+
+/* .carousel .myGrap{
+    width: 40rem;
+    height: fit-content;
+    margin-left: 2rem;
+} */

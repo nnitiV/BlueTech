@@ -92,8 +92,7 @@ formElement.addEventListener("submit", (e) => {
   const storagedTels = localStorage.getItem("telefone");
   const tels = storagedTels ? JSON.parse(storagedTels) : [];
 
-  const hashedPassword = CryptoJS.SHA256(password).toString();
-  passwords.push(hashedPassword);
+  passwords.push(password);
   emails.push(email);
   names.push(name);
   tels.push(tel);
@@ -132,5 +131,5 @@ sair.addEventListener("submit", function (e) {
   e.preventDefault();
   localStorage.setItem("isAdmin", 0);
   localStorage.setItem("posição", -1);
-  window.location.href = "/home.html";
+  window.location.href = "/index.html";
 });

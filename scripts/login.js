@@ -1,15 +1,27 @@
 const formElement = document.getElementById("loginForm");
 localStorage.setItem("isAdmin", 0);
-localStorage.setItem("email", JSON.stringify([]));
-localStorage.setItem("password", JSON.stringify([]));
+if (localStorage.getItem("email") == null) {
+  localStorage.setItem("email", JSON.stringify([]));
+  localStorage.setItem("password", JSON.stringify([]));
+  localStorage.setItem("name", JSON.stringify([]));
+  localStorage.setItem("telefone", JSON.stringify([]));
+  localStorage.setItem("crecheEscola", JSON.stringify([]));
+}
 var stoEmails = localStorage.getItem("email");
-var stoSenhas = localStorage.getItem("password");
 var emails = JSON.parse(stoEmails);
+var stoname = localStorage.getItem("name");
+var nome = JSON.parse(stoname);
+var stotelefone = localStorage.getItem("telefone");
+var telefone = JSON.parse(stotelefone);
+var stoSenhas = localStorage.getItem("password");
 var senhas = JSON.parse(stoSenhas);
-emails.push("test@test.com");
-const hashedPassword = CryptoJS.SHA256("teste").toString();
+emails.push("teste@gmail.com");
 localStorage.setItem("email", JSON.stringify(emails));
-senhas.push(hashedPassword);
+nome.push("Teste");
+localStorage.setItem("name", JSON.stringify(nome));
+telefone.push("(11) 99999-9999");
+localStorage.setItem("telefone", JSON.stringify(telefone));
+senhas.push("teste");
 localStorage.setItem("password", JSON.stringify(senhas));
 formElement.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -21,7 +33,6 @@ formElement.addEventListener("submit", (e) => {
 
   const email = document.getElementById("inputEmail").value;
   const password = document.getElementById("inputPassword").value;
-  const hashedPassword = CryptoJS.SHA256(password).toString();
 
   var emailExists = false;
   var emailIndex = 1;
@@ -38,7 +49,7 @@ formElement.addEventListener("submit", (e) => {
   }
   localStorage.setItem("posição", emailIndex);
   var passExists = false;
-  if (hashedPassword === passwords[emailIndex]) {
+  if (password === passwords[emailIndex]) {
     passExists = true;
   }
   if (!passExists) {
